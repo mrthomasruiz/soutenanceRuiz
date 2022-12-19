@@ -165,7 +165,7 @@ class HomeController extends AbstractController
 
                 $this->addFlash('success', 'Merci pour votre commande');
 
-                return $this->redirectToRoute('home');
+                return $this->redirectToRoute('recapCommande');
             }
 
                 #[Route('/recapCommande', name: 'recapCommande')]

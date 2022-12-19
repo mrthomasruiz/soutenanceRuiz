@@ -25,7 +25,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ path('home') }}"><h3>LES FOUINEURS</h3></a>
+        <a class="navbar-brand" href="{{ path('home') }}"><h3>LES FOUINEURS ...</h3></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
                 aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,13 +35,12 @@
                 {% if app.user and is_granted('ROLE_USER') %}
                 <li class="nav-item">
                     <a class="btn btn-warning me-3" href="{{ path('ajoutChasse') }}"><span
-                                class="visually">ON FOUINE <br>POUR VOUS </span><br><i
-                                class="fa-regular fa-hand-pointer fa-xl"></i>
+                                class="visually"><h5>ON FOUINE <br>POUR VOUS <br></h5> <div class="fa-xl mt-1">&#x26AF;</div>
                     </a>
 
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('trouvailles') }}"><h5>| Nos Trouvailles</h5></a>
+                    <a class="nav-link" href="{{ path('trouvailles') }}"><h5>| Nos Trouvailles </h5></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('nousContacter') }}"><h5>| Nous Contacter</h5></a>
@@ -125,7 +124,7 @@
                     <a class="nav-link" href="{{ path('trouvailles') }}">NOS TROUVAILLES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('ajoutChasse') }}">ON FOUINE POUR VOUS</a>
+                    <a class="nav-link" href="{{ path('ajoutChasse') }}">ON FOUINE POUR VOUS <div class="fa-xl mt-1">&#x26AF;</div></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://www.instagram.com" TARGET="_blank">NOUS SUIVRE SUR <i

@@ -46,7 +46,7 @@
 
     <td><a href="{{ path('trouvailles') }}" class="btn btn-secondary btn">CONTINUER VOS ACHATS</a></td> <br>
     {% if app.user %}
-    <a href="{{ path('recapCommande') }}" class="btn btn-light btn mt-2">COMMANDER</a>
+    <a href="{{ path('commande') }}" class="btn btn-light btn mt-2">COMMANDER</a>
 
     {% else %}
         <a href="{{ path('login') }}" class="btn btn-warning">Connectez-vous</a>
