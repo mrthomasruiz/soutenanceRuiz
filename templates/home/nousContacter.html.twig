@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <form>
+        <fieldset>
+            <legend>NOUS CONTACTER</legend>
+            <div class="form-group row">
+
+            </div>
+            <div class="form-group">
+                <label for="exampleSelect1" class="form-label mt-4">Sélectionnez un sujet</label>
+                <select class="form-select" id="exampleSelect1">
+                    <option>Sélectionnez un sujet</option>
+                    <option>Commande</option>
+                    <option>Delai de livraion </option>
+                    <option>SAV</option>
+                    <option>Retour</option>
+                    <option>Autres</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleTextarea" class="form-label mt-4 ">Exprimez-vous</label>
+                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted"></small>
+            </div>
+
+            <fieldset class="form-group">
+
+
+            </fieldset>
+            <fieldset class="form-group">
+                <legend class="mt-4">Validation d'envoi</legend>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                    Veuillez cocher cette case
+                    </label>
+                </div>
+
+            </fieldset>
+
+
+            <button type="submit" class="btn btn-warning mt-2">ENVOYER</button>
+        </fieldset>
+    </form>
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+

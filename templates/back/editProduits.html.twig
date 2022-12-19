@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+    {{ form_row(form.titre) }}
+    {{ form_row(form.editPhoto) }}
+    {{ form_row(form.prix) }}
+    {{ form_row(form.description) }}
+    {{ form_row(form.sousCategorie) }}
+    {{ form_row(form.enregistrer) }}
+    {{ form_end(form) }}
+
+
+{% endblock %}
+
+{% block title %}
+{{ parent() }} Modification Produit
+{% endblock %}
+

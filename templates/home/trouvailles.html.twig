@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row justify-content-evenly  me-3 mt-2 text-center ">
+        <a href="{{ path('trouvailles') }}"
+           class="btn btn-secondary">AFFICHER TOUT</a>
+    </div>
+
+    <div class="mt-2 row justify-content-center">
+        {% for categorie in categories %}
+            <div class="col-md-4 text-center  ">
+                <a href="{{ path('filter', {'param': 'categorie', 'id': categorie.id}) }}"
+                   class="mt-2 btn btn-secondary">{{ categorie.nom }}</a>
+            </div>
+
+        {% endfor %}
+
+
+
+        <form class="mt-2 mb-2" method="post" action="{{ path('filter', {'param': 'sousCategorie', 'id': null}) }}">
+            <div class="row justify-content-evenly">
+                <div class="col-md-4 me-3 mt-2">
+                    <select name="sousCategorie" class="form-select" aria-label="Default select example">
+                        <option selected>Affiner par sous-catégorie</option>
+                        {% for sousCategorie in sousCategories %}
+                            <option value="{{ sousCategorie.id }}">{{ sousCategorie.nom  }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-warning mt-2"><i class="fa-solid fa-check"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+    <div>
+
+
+        <div class="row justify-content-evenly">
+            {% for produit in produits %}
+
+
+
+                <div class="card bg-secondary text-dark  col-md-4 m-1 p-0 rounded border-success mb-3" style="max-width: 17rem;">
+
+                    <img height="200" src="{{ asset('upload/'~produit.photo) }}" alt="">
+                    {% if produit.vendu==1 %}
+
+                        <button class="btn btn-dark">VENDU</button>
+                        {% else %}
+                            <a href="{{ path('ajoutPanier', {'id': produit.id}) }}" class="btn btn-warning">Ajouter au panier</a>
+                    {% endif %}
+
+                    <div class="card-header ">{{ produit.prix }}€</div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{ produit.titre }}</h4>
+                        <p class="card-text">{{ produit.description | default('Aucune description pour ce produit') }}</p>
+                    </div>
+
+                </div>
+
+            {% endfor %}
+        </div>
+
+    </div>
+
+
+
+{% endblock %}
+
+{% block title %}
+{{ parent() }}Nos Trouvailles
+{% endblock %}
+

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<table class="table table-secondary table-striped">
+
+    <thead>
+
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Achat</th>
+        <th scope="col">Date</th>
+        <th scope="col">User</th>
+        <th scope="col">Retour au panier</th>
+        <th scope="col">Annuler la commande</th>
+        <th scope="col">Acheter</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for commande in commandes %}
+        <tr>
+            <th scope="row">{{ commande.id }}</th>
+            <td>{% for achat in commande.achats %}
+                    <span>{{ achat.produit.titre }}</span><br>
+                {% endfor %}</td>
+            <td>{{ commande.date | date('d/m/Y') }}</td>
+            <td>{{ commande.user.firstname }}</td>
+
+
+            <td><a href="{{ path('panier') }}" class="btn btn-light">Retour au panier</a></td>
+            <td><a href="{{ path('destroy') }}" class="btn btn-dark">Annuler la commande</a></td>
+            <td><a href="" class="btn btn-dark">ACHETER</a></td>
+        </tr>
+    {% endfor %}
+    <tbody>
+</table>
+
+    {% endblock %}
+
+    {% block title %}
+
+    {% endblock %}
+

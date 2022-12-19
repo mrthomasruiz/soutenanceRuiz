@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ path('ajoutProduits') }}"><h3><i class="fa-solid fa-plus fa-xl text-warning"></i> AJOUTER UNE
+                SOUS-CATEGORIE</h3></a><br>
+    </li>
+    <table class="table table-secondary table-striped mt-5">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titre</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for sousCategorie in sousCategories %}
+
+            <tr>
+                <th scope="row">{{ sousCategorie.id }}</th>
+                <td>{{ sousCategorie.nom }}</td>
+                <td><a href="{{ path('editSousCategorie', {'id': sousCategorie.id}) }}"
+                       class="btn btn-light">Modifier</a>
+                    <a href="{{ path('deleteSousCategorie', {'id': sousCategorie.id }) }}"
+                       onclick="return confirm('Êtes-vous sûr?')" class="btn btn-dark">Supprimer</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block title %}
+    {{ parent() }}Gestion des Catégories
+{% endblock %}
+

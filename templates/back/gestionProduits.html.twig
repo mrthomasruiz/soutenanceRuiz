@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="nav-item">
+        <a class="nav-link" href="{{ path('ajoutProduits') }}"><h3><i class="fa-solid fa-plus fa-xl text-warning"></i> AJOUTER UN
+                PRODUIT</h3></a><br>
+    </div>
+    <table class="table table-secondary table-striped">
+
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titre</th>
+            <th scope="col">Photo</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Catégorie</th>
+            <th scope="col">Sous Catégorie</th>
+            <th scope="col">Description</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        {% for produit  in produits %}
+            <tr>
+                <th scope="row">{{ produit.id }}</th>
+                <td>{{ produit.titre }}</td>
+                <td><img src="{{ asset('upload/')~produit.photo }}" width="100" alt=""></td>
+                <td>{{ produit.prix }}€</td>
+                <td>{{ produit.sousCategorie.categorie.nom | default('<span style="color:black;">Aucune catégorie définie</span>')| upper | raw }}</td>
+                <td>{{ produit.sousCategorie.nom | default('<span style="color:black;">Aucune sous catégorie définie</span>')| upper | raw }}</td>
+                <td>{{ produit.description }}</td>
+
+                <td><a href="{{ path('editProduits', {'id': produit.id}) }}" class="btn btn-light">Modifier</a>
+                    <a href="{{ path('deleteProduits', {'id': produit.id}) }}"
+                       onclick="return confirm('Êtes-vous sûr?')" class="btn btn-dark">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+
+
+{% endblock %}
+
+{% block title %}
+    {{ parent() }} Gestion Produits
+{% endblock %}
+

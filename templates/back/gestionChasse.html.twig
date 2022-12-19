@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <table class="table table-secondary table-striped">
+
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Quoi</th>
+            <th scope="col">Photo</th>
+            <th scope="col">Comment</th>
+            <th scope="col">Combien</th>
+            <th scope="col">Quand</th>
+            <th scope="col">Qui</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        {% for chasse  in chasses %}
+            <tr>
+                <td>{{ chasse.id }}</td>
+                <td>{{ chasse.titre }}</td>
+                <td><img src="{{ asset('upload/')~chasse.Photo}}" width="100" alt=""></td>
+                <td>{{ chasse.criteres }}</td>
+                <td>{{ chasse.budget }}€</td>
+                <td>{{ chasse.deadline |date("m/Y") }}</td>
+                <td>{{ chasse.email }}</td>
+
+
+                <td><a href="{{ path('editChasse', {'id': chasse.id}) }}" class="btn btn-light">Modifier</a>
+                    <a href="{{ path('deleteChasse', {'id': chasse.id}) }}" onclick="return confirm('Êtes-vous sûr?')" class="btn btn-dark">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+{% endblock %}
+
+{% block title %}
+{{ parent() }}Gestion Chasse
+{% endblock %}
+
