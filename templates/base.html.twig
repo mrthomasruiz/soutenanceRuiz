@@ -32,33 +32,38 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav me-auto ">
+                {% if app.user and is_granted('ROLE_USER') %}
                 <li class="nav-item">
                     <a class="btn btn-warning me-3" href="{{ path('ajoutChasse') }}"><span
                                 class="visually">ON FOUINE <br>POUR VOUS </span><br><i
                                 class="fa-regular fa-hand-pointer fa-xl"></i>
                     </a>
+
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('trouvailles') }}"><h5>| Nos Trouvailles</h5></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('nousContacter') }}"><h5>| Nous Contacter</h5></a>
                 </li>
+                {% endif %}
+
                 {% if app.user and is_granted('ROLE_ADMIN') %}
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('gestionChasse') }}"><h5>| Gestion Chasses</h5></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('gestionProduits') }}"><h5>| Gestion Produits</h5></a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('gestionChasse') }}"><h5>| Gestion Chasses</h5></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('gestionProduits') }}"><h5>| Gestion Produits</h5></a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('gestionCategorie') }}"><h5>| Gestion Catégories</h5></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('gestionSousCategorie') }}"><h5>| Gestion Sous-Catégories</h5></a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('gestionCategorie') }}"><h5>| Gestion Catégories</h5></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('gestionSousCategorie') }}"><h5>| Gestion Sous-Catégories</h5>
+                        </a>
+                    </li>
                 {% endif %}
                 <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -108,7 +113,7 @@
 
     {% block body %}{% endblock %}
 </div>
-<nav class="navbar navbar-expand navbar-dark bg-dark text-warning mt-3 me-auto">
+<nav class="navbar navbar-expand navbar-warning bg-warning  mt-3 me-auto">
     <div class="container-fluid">
 
         <div class="collapse navbar-collapse" id="navbarColor02">

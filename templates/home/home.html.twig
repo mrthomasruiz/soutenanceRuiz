@@ -6,21 +6,12 @@
 
 
 {% block body %}
-    <a href="{{ path('trouvailles') }}" class="text-decoration-none "  ><h4 class=" text-center  p-3  bg-gradient text-light bg-warning bg-warning "   >TOUTES NOS TROUVAILLES </h4> <br><br>
-    </a>
-    <h2 class="text-center  p-3 bg-warning text-dark bg-gradient">BIENVENUE CHES LES FOUINEURS !!! </h2> <br><br>
-    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+    <h2 class="text-center  p-3  text-light ">BIENVENUE CHES LES FOUINEURS !!! </h2> <br>
+    <p class="text-center text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
         aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
         fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
         anim id est laborum.
-        <br>
-        <br>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
     </p> <br>
 
     <div id="carouselWithIndicators" class="carousel slide w-50 mx-auto" data-bs-ride="carousel">
@@ -31,7 +22,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ asset('upload/carousel-slide-1.png') }}" class="d-block w-100" alt="Slide 1">
+                <img src="{{ asset('upload/carousel-slide-3.jpg') }}" class="d-block w-100" alt="Slide 1">
             </div>
             <div class="carousel-item">
                 <img src="{{ asset('upload/carousel-slide-2.jpg') }}" class="d-block w-100" alt="Slide 2">
@@ -39,7 +30,9 @@
             <div class="carousel-item">
                 <img src="{{ asset('upload/carousel-slide-3.jpg') }}" class="d-block w-100" alt="Slide 3">
             </div>
-
+            <div class="carousel-item">
+                <img src="{{ asset('upload/carousel-slide-2.jpg') }}" class="d-block w-100" alt="Slide 2">
+            </div>
         </div>
         <a class="carousel-control-prev" href="#carouselWithIndicators" role="button" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -49,19 +42,32 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </a>
-    </div> <br><br>
-    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+    </div> <br>
+    <a href="{{ path('trouvailles') }}" class="text-decoration-none "  ><h5 class=" text-center  p-3  bg-gradient text-light "   >NOS TROUVAILLES </h5> <br>
+    </a>
+    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.
+    </p> <br>
+    <a href="{{ path('ajoutChasse') }}" class="text-decoration-none "  ><h5 class=" text-center  p-3  bg-gradient text-light "   >ON FOUINE A VOTRE PLACE </h5> <br>
+    </a>
+    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
         aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
         fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
         anim id est laborum.
         <br>
-        <br>
+
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
         laborum.
-    </p>
+    </p> <br>
+
+
+
 
 {% endblock %}
