@@ -152,6 +152,7 @@ class HomeController extends AbstractController
 
                 foreach ($panier as $item){
                     $achat=new Achat();
+                   // dd($item['produit']);
                     $item['produit']->setVendu(1);
                     $manager->persist($item['produit']);
                     $achat->setProduit($item['produit']);

@@ -15,7 +15,7 @@
             <th scope="col">Quantité</th>
             <!--<th scope="col">-</th> -->
             <th scope="col">Supprimer</th>
-            <th scope="col">Annuler</th>
+
         </tr>
 
         </thead>
@@ -34,7 +34,7 @@
                 <td>{{  item.quantite  }}</td>
                 <!--<td><a href="{{ path('ajoutPanier', {'id': item.produit.id}) }}" class="btn btn-dark">+</a></td>-->
                 <td><a href="{{ path('supprimer', {'id': item.produit.id}) }}" class="btn btn-dark">Retirer ce produit</a></td>
-                <td><a href="{{ path('destroy') }}" class="btn btn-dark">Vider votre panier</a></td>
+
 
             </tr>
 
@@ -44,9 +44,14 @@
 
     <p><h2>Montant total:</h2>{{  total  }}€</p>
 
-    <td><a href="{{ path('trouvailles') }}" class="btn btn-secondary btn">CONTINUER VOS ACHATS</a></td> <br>
+    <a href="{{ path('trouvailles') }}" class="btn btn-secondary btn">CONTINUER VOS ACHATS</a> <br>
+    {% if panier is not empty %}
+        <a href="{{ path('destroy') }}" class="btn btn-dark btn">VIDER VOTRE PANIER</a> <br>
+    {% endif %}
+
+
     {% if app.user %}
-    <a href="{{ path('commande') }}" class="btn btn-light btn mt-2">COMMANDER</a>
+    <a href="{{ path('commande') }}" class="btn btn-light btn">COMMANDER</a>
 
     {% else %}
         <a href="{{ path('login') }}" class="btn btn-warning">Connectez-vous</a>
